@@ -1,0 +1,296 @@
+/* Cyberpunk-Inspired Redesign */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Oxanium:wght@300;400;600&display=swap');
+
+:root {
+  --primary-bg: #1a0000;
+  --secondary-bg: #330000;
+  --accent-color: #ff3333;
+  --text-color: #ffffff;
+  --border-color: #ff0000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+body {
+  font-family: 'Oxanium', cursive;
+  background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.container {
+  width: 95vw;
+  max-width: 1400px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  transform: rotateX(10deg);
+}
+
+/* Header Redesign */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: rgba(0, 31, 63, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.logo {
+  flex: 0 0 150px;
+  margin-right: 30px;
+}
+
+.logo img {
+  max-width: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.token-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+/* Chart Container */
+.chart-container {
+  height: 500px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 15px;
+  overflow: hidden; /* Prevent chart from spilling out */
+}
+
+/* Controls Redesign */
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.control-panel {
+  background: rgba(0, 31, 63, 0.5);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Buttons and Controls */
+.control-panel input[type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  outline: none;
+  margin: 15px 0;
+}
+
+.control-panel input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-color);
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.control-panel input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+button, select {
+  font-family: 'Orbitron', sans-serif;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--accent-color);
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--border-color);
+  color: var(--primary-bg);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+#buy-button {
+  background: rgba(0, 255, 0, 0.2);
+}
+
+#sell-button {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+/* Trade History */
+.trade-history {
+  background: rgba(0, 31, 63, 0.5);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.trade-history table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.trade-history th {
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--accent-color);
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.trade-history td {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  text-align: center;
+}
+
+.profit {
+  color: #00ff00 !important;
+}
+
+.loss {
+  color: #ff0000 !important;
+}
+
+/* Portfolio Details */
+#portfolio-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  font-size: 0.9rem;
+}
+
+#portfolio-details div {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 98vw;
+    padding: 15px;
+    transform: none;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
+
+/* Contract Address Readability */
+.contract-address {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contract-address code {
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.copy-button {
+  background: var(--accent-color);
+  color: var(--primary-bg);
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
